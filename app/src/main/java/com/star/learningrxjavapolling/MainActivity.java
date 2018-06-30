@@ -44,7 +44,8 @@ public class MainActivity extends AppCompatActivity {
         // Create an observable instance for looking up Retrofit contributors.
         Observable<List<Contributor>> observable = github.contributors(OWNER, REPO);
 
-        Observable.intervalRange(1, 3, 2, 3, TimeUnit.SECONDS)
+        Observable
+                .intervalRange(1, 3, 2, 3, TimeUnit.SECONDS)
                 .doOnNext(aLong -> {
 
                     Log.d(TAG, "第 " + aLong + " 次轮询");
